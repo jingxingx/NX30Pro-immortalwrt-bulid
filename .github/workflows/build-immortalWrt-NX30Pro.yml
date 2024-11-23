@@ -184,7 +184,7 @@ jobs:
         id: organize
         if:  steps.checkNeed.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true' && !cancelled()
         run: |
-          cd $GITHUB_WORKSPACE/immortalWrt/bin/targets/*/*
+          cd immortalWrt/bin/targets/*/*
           rm -rf packages
           find . -type f ! -name '*.bin' -exec rm -f {} \;
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
